@@ -129,7 +129,10 @@ h1 {
 
 <script>
 function playMusic() {
-  document.getElementById("bg-music").play();
+  const audio = document.getElementById("bg-music");
+  audio.play().catch(error => {
+    console.log("Playback failed:", error);
+  });
 }
 
 /* Fade-in animation on scroll */
